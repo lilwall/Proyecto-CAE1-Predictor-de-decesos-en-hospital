@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>if(location.protocol!=="https:"){location.protocol="https:"}</script>
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+<title>Proyecto CAE 1</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Core theme CSS (includes Bootstrap)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <link href="static/css/styles.css" rel="stylesheet" />
+</head>
+    <body id="page-top">
+        <!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#top"><img src="static/assets/img/navbar-logo.jpg" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#detector">Predecir</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/variables">Variables</a></li>
+                    </ul>
+                </div>
+            </div>
+</nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container"">
+              <div class="masthead-heading text-uppercase">
+                <h1>
+                  <span class="title">Modelo de predicción de decesos</span>
+                  <br>
+                  <span class="title">en hospitales</span>
+                </h1>
+              </div>
+              <div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#detector">Predecir</a>
+              </div>
+            </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </header>
+        <!-- Bienvenida-->
+        <section class="page-section" id="bienvenida">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Bienvenida</h2>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-13">
+                        <img class="img-fluid" src="static/assets/img/cae01.jpg" alt="..." />
+                      </div>
+                      <div class="col-lg-14">
+                        <h3 align = "justify" class="section-subheading text-muted">
+                          <font SIZE =5>
+                          El proyecto de Introducción a la Programación del Programa de Master in Analytics Innovation & Technology; y ante las diferentes situaciones que se han estado viviendo en los últimos años a nivel global, las cuales han causado un incremento en la tasa de mortalidad en la población, nace la necesidad de estudiar la probabilidad que una persona con algunos padecimientos esté en riesgo de muerte.
+                          <br></br>
+                          Para determinar el riesgo de deceso en un paciente, se utilizaron 16 variables en un modelo de bosque aleatorio y se obtuvo una precisión del 88%. Para obtener más información sobre las variables usadas haga click <a href="/variables">aqui.</a>
+                            </font>
+                        </h3>    
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <!-- Detectar-->
+        <section class="page-section" id="detector">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Predictor de Decesos en Hospitales</h2>
+                    <h3 class="section-subheading text-muted">Ingrese los datos solicitados para predecir la probabilidad de deceso</h3>
+                </div>
+             <form  action="/results" method = "GET"> 
+            <div class="row">
+            <!-- Campos 1 - 4-->
+               <div class="form-group row">
+                              <div class="col-sm-3">
+                                <label>Género</label>
+                                <select class="form-select" name="Gendera" id="Gendera" aria-label="Default select example" required>
+                                <option disabled selected value>Seleccione una opción</option>
+                                <option value="1">Mujer</option>
+                                <option value="0">Hombre</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-3">
+                                    <label>Hipertensión</label>
+                                    <select class="form-select" name="Hypertensive" id="Hypertensive" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                              </div>
+                              <div class="col-sm-3">
+                                    <label>Anemia</label>
+                                    <select class="form-select" name="Deficiencyanemias" id="Deficiencyanemias" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                              </div>
+                              <div class="col-sm-3">
+                                    <label>Depresión</label>
+                                    <select class="form-select" name="Depression" id="Depression" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                              </div>
+              </div>
+              <div>
+              <br>
+              </div>  
+              <!-- Campos 5 - 8-->
+              <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <label>Hyperlipidemia</label>
+                                    <select class="form-select" name="Hyperlipemia" id="Hyperlipemia" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Falla renal</label>
+                                    <select class="form-select" name="Renal_Failure" id="Renal_Failure" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>EPOC</label>
+                                    <select class="form-select" name="COPD" id="COPD" aria-label="Default select example" required>
+                                    <option disabled selected value>Seleccione una opción</option>
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Temperatura</label>
+                                    <input type="number" name="Temperature"  class="form-control" id="Temperature" placeholder="33≤Temperatura≤40" min="33.00" max="40.00" step="any">
+                                </div>
+                            </div>
+              <!-- Campos 9 - 12-->
+              <div>
+              <br>
+              </div> 
+              <div class="form-group row">
+                              <div class="col-sm-3">
+                                    <label>Glóbulos rojos</label>
+                                    <input type="number" name="RBC"  class="form-control" id="RBC" placeholder="2≤RBC≤7" min="2.00" max="7.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>Hemoglobina</label>
+                                    <input type="number" name="MCHC"  class="form-control" id="MCHC" placeholder="27≤MCHC≤38" min="27.00" max="38.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>INR</label>
+                                    <input type="number" name="INR"  class="form-control" id="INR" placeholder="0≤INR≤9" min="0.00" max="9.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>Calcio en sangre</label>
+                                    <input type="number" name="Blood_calcium"  class="form-control" id="Blood_calcium" placeholder="6≤Calcio en sangre≤11" min="6.00" max="11.00" step="any">
+                                </div>
+                            </div>
+              <!-- Campos 13 - 16-->
+              <div>
+              <br>
+              </div> 
+              <div class="form-group row">
+                              <div class="col-sm-3">
+                                    <label>Brecha de aniones</label>
+                                    <input type="number" name="Anion_gap"  class="form-control" id="Anion_gap" placeholder="6≤Brecha de aniones≤26" min="6.00" max="26.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>Iones de magnesio</label>
+                                    <input type="number" name="Magnesium_ion"  class="form-control" id="Magnesium_ion" placeholder="1≤Iones de magnesio≤5" min="1.00" max="5.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>PH</label>
+                                    <input type="number" name="PH"  class="form-control" id="PH" placeholder="7≤PH≤8"  min="7.00" max="8.00" step="any">
+                                </div>
+                              <div class="col-sm-3">
+                                    <label>Ácido láctico</label>
+                                    <input type="text" name="Lactic_acid"  class="form-control" id="Lactic_acid" placeholder="0≤Ácido láctico≤9" min="0.00" max="9.00" step="any">
+                                </div>
+              </div>
+                            <div>
+                            <br>
+                              <div class="col-md-12 text-center">
+                            <input id="detector-submit" type="submit" class="btn btn-primary px-4 float-right" value="Predecir" disabled/>
+                                </div>  
+                            </div>  
+            </div>
+               </form>
+                </div>
+
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="nosotros">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Nosotros</h2>
+                    <h3 class="section-subheading text-muted">INCAE - CAE 01</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/1.jpg" alt="..." />
+                            <h4>Andrey J. Murillo</h4>
+                            <p class="text-muted">Ingeniero Informático
+                              <br>
+                           Candidato Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Emprendedor con experiencia en agrotecnología, dirección de proyectos y conocimiento en Cloud Computing y otros lenguajes de programación. 
+                          </br>
+                          Hobbies: Leer, surf, jugar fútbol.  
+                            </p>
+                          <p class="text-muted"</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/andrey.murillo.96/" target="_blank" aria-label="Andrey J. Murillo Facebook Profile" ><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/andrey-j-murillo-5aa52a169/" target="_blank" aria-label="Andrey J. Murillo LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/FotoS.jpg" alt="..." />
+                            <h4>Estefanía Peralta</h4>
+                          <p class="text-muted">Marketing y Admministradora de empresas. 
+                              <br>
+                           Candidata Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Implementación de módulos de talento humano SAP en Indurama. 
+Asistencia en actividades administrativas y comerciales en empresas familiares.
+                          </br>
+                          Hobbies: Ver películas y Juegos de mesa.
+                            </p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/tefa.peraltabravo" target="_blank" aria-label="Estefania Peralta Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/estefan%C3%ADa-peralta-bravo/" target="_blank" aria-label="Estefania Peralta LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/FotoKK.jpg" alt="..." />
+                            <h4>Kevin Granados</h4>
+                          <p class="text-muted">Ingeniero en negocios
+                              <br>
+                           Candidato Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Manejo de proyectos tecnológicos tales como CRM y despliegues de sitios web. Análisis de datos para el área comercial y financiera.
+                          </br>
+                          Hobbies: leer, jugar fútbol, videojuegos.
+                          </p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/kevin.Granados.5686" target="_blank" aria-label="Kevin Granados Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/kevin-granados-077b26153/" target="_blank" aria-label="Kevin Granados LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                  <div class="row">
+                  <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/fotorl.jpeg" alt="..." />
+                            <h4>Roberto Lacayo</h4>
+                          <p class="text-muted">Ingeniero en Mecatrónica
+                              <br>
+                           Candidato Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Ventas consultivas de servicios, software y ciberseguridad de proveedores como IBM, Automation Anywhere, Cisco y Checkpoint.
+                          </br>
+                          Hobbies: Jugar fútbol, ver series y leer.
+                          </p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/Roberto.Lacayo" target="_blank" aria-label="Roberto Lacayo Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/roberto-lacayo-768558158" target="_blank" aria-label="Roberto Lacayo LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>                          
+                        </div>
+                    </div>
+                  <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/FotoJ.jpg" alt="..." />
+                            <h4>Jennifer Tellez</h4>
+                          <p class="text-muted">Banca y Finanzas 
+                              <br>
+                           Candidata Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Experiencia en el control y proyección de proyectos de inversión de capital y gastos operacionales en Smith&Nephew.
+                          </br>
+                          Hobbies: Rompecabezas y tomar vinitos 
+                          </br>
+                          </p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/jtellez94" target="_blank" aria-label="Jennifer Tellez Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/jtellez94/" target="_blank" aria-label="Jennifer Tellez LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>                          
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="static/assets/img/team/FotoG.jpg" alt="..." />
+                            <h4>Juan Gerardo Gonzalez</h4>
+                          <p class="text-muted">Ingeniero en Mecatrónica
+                              <br>
+                           Candidato Master in Analytics Innovation & Technology - INCAE
+                        </br>
+                          Experiencia en la programación de microprocesadores. También, diseño de sistemas para inteligencias artificiales de cirugías cerebrales.
+                          </br>
+                          Hobbies: entrenar, correr, ver series,videojuegos.
+                          </br>
+                          </p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100000780241830" target="_blank" aria-label="Juan Gerardo Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/juan-gonzalez-782130149/" target="_blank" aria-label="Roberto Lacayo LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>                          
+                        </div>
+                    </div>
+                    
+                  </div>
+            </div>
+        </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start"></div>
+                  <br><br/>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/incae?lang=en" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/INCAE/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/school/incae-business-school/?originalSubdomain=cr" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                      <br>
+                      <br>
+                      Copyright &copy; Master Analytics Innovation and Technology   CAE 1 - INCAE
+                      <br>
+                    </div>
+                  <div class="col-lg-4 text-lg-start"></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
